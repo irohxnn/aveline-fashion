@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Aveline Fashion</title>
+  <title>AVELINE | Luxury Fashion</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,167 +15,173 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+
+    body{
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3{
+      font-family: 'Playfair Display', serif;
+    }
+
+  </style>
+
 </head>
 
-<body>
-
-  <!-- NAVBAR -->
-<!-- NAVBAR -->
-
-<nav class="absolute top-0 left-0 w-full z-50">
-
-    <div class="flex justify-between items-center px-5 md:px-10 py-6">
-  
-      <!-- LOGO -->
-  
-      <h1 class="text-3xl md:text-5xl font-bold text-white">
-        AVELINE
-      </h1>
-  
-      <!-- RIGHT SIDE -->
-  
-      <div class="flex items-center gap-6 md:gap-10">
-  
-        <!-- MENU -->
-  
-        <ul class="flex gap-4 md:gap-8 text-white text-base md:text-2xl">
-  
-          <li>
-            <a href="index.html" class="hover:text-gray-300 transition">
-              Home
-            </a>
-          </li>
-  
-          <li>
-            <a href="collections.html" class="hover:text-gray-300 transition">
-              Collections
-            </a>
-          </li>
-  
-          <li>
-            <a href="about.html" class="hover:text-gray-300 transition">
-              About
-            </a>
-          </li>
-  
-        </ul>
-  
-        <!-- CART -->
-  
-        <a href="product.html">
-  
-          <div class="relative text-2xl text-white">
-  
-            🛍️
-  
-          </div>
-  
-        </a>
-  
-      </div>
-  
-    </div>
-  
-  </nav>
-
-  <!-- CART PANEL -->
-
-  <div
-  id="cart-panel"
-  class="hidden fixed top-0 right-0 w-[350px] h-full bg-white shadow-2xl z-50 p-8 overflow-y-auto">
-
-    <div class="flex justify-between items-center mb-8">
-
-      <h2 class="text-3xl font-bold text-black">
-        Your Cart
-      </h2>
-
-      <button onclick="toggleCart()" class="text-3xl text-black">
-        ×
-      </button>
-
-    </div>
-
-    <div id="cart-items" class="space-y-6 text-black">
-
-      <p class="text-gray-500">
-        Cart is empty
-      </p>
-
-    </div>
-
-  </div>
+<body class="bg-[#f8f5f1]">
 
   <!-- HERO SECTION -->
 
   <section
-  class="h-screen flex items-center justify-center text-center bg-cover bg-center"
+  class="relative min-h-screen bg-cover bg-[center_top] flex items-center justify-center px-4"
   style="background-image: url('images/heroo.jpg');">
 
-    <div class="fade-up bg-black/50 p-10 md:p-16 rounded-3xl text-white max-w-4xl mx-6">
+    <!-- OVERLAY -->
 
-      <h1 class="text-4xl md:text-7xl leading-tight font-bold mb-6">
-        Redefine Modern Fashion
-      </h1>
+    <div class="absolute inset-0 bg-black/20"></div>
 
-      <p class="text-xl mb-8">
-        Elegant collections crafted for contemporary women.
-      </p>
+    <!-- NAVBAR -->
 
-      <a href="collections.html">
+    <nav class="absolute top-0 left-0 w-full z-50">
 
-        <button class="bg-white text-black px-8 py-4 rounded-full hover:scale-105 transition duration-300">
-          Shop Collection
-        </button>
+      <div class="px-5 md:px-10 py-6">
 
-      </a>
+        <!-- TOP ROW -->
+
+        <div class="flex justify-between items-center">
+
+          <!-- LOGO -->
+
+          <h1 class="text-4xl md:text-5xl font-bold text-white">
+            AVELINE
+          </h1>
+
+          <!-- CART -->
+
+          <a href="product.html">
+
+            <div class="text-3xl text-white">
+              🛍️
+            </div>
+
+          </a>
+
+        </div>
+
+        <!-- MENU -->
+
+        <ul class="flex justify-center gap-8 md:gap-12 text-white text-lg md:text-2xl mt-6">
+
+          <li>
+            <a href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="collections.html">
+              Collections
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html">
+              About
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </nav>
+
+    <!-- HERO CONTENT -->
+
+    <div class="relative z-10 w-full flex justify-center pt-32 md:pt-20">
+
+      <div class="bg-black/40 backdrop-blur-sm rounded-[35px] p-8 md:p-16 text-center max-w-4xl w-full">
+
+        <h1 class="text-5xl md:text-8xl font-bold text-white leading-tight mb-6">
+
+          Redefine <br>
+          Modern Fashion
+
+        </h1>
+
+        <p class="text-xl md:text-3xl text-white leading-relaxed mb-10">
+
+          Elegant collections crafted for contemporary women.
+
+        </p>
+
+        <a href="collections.html">
+
+          <button
+          class="bg-white text-black px-10 py-4 md:px-14 md:py-5 rounded-full text-xl hover:scale-105 transition">
+
+            Shop Collection
+
+          </button>
+
+        </a>
+
+      </div>
 
     </div>
 
   </section>
 
-  <!-- PRODUCTS -->
+  <!-- FEATURED SECTION -->
 
-  <section class="fade-up px-8 md:px-16 py-24 bg-[#f8f5f1]">
+  <section class="px-6 md:px-16 py-24">
 
-    <h2 class="text-4xl md:text-5xl font-bold mb-6">
-      New Arrivals
-    </h2>
+    <div class="text-center mb-20">
 
-    <p class="text-gray-600 text-lg mb-12 max-w-2xl">
-      Explore elevated essentials designed for timeless elegance and contemporary sophistication.
-    </p>
+      <p class="uppercase tracking-[5px] text-gray-500 mb-4">
+        New Collection
+      </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <h2 class="text-5xl md:text-7xl font-bold">
+        Featured Styles
+      </h2>
+
+    </div>
+
+    <!-- GRID -->
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
       <!-- CARD 1 -->
 
       <a href="product.html">
 
-        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
+        <div class="group bg-white rounded-[30px] overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
 
-          <img src="images/model1.jpg"
-          class="w-full h-[450px] object-cover">
+          <div class="overflow-hidden">
 
-          <div class="p-6">
+            <img
+            src="images/model1.jpg"
+            class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-700">
 
-            <h3 class="text-2xl font-semibold">
+          </div>
+
+          <div class="p-8">
+
+            <h3 class="text-3xl font-bold mb-3">
               Satin Evening Dress
             </h3>
 
-            <p class="text-gray-500 mt-3 leading-7">
-              Elegant satin tailoring crafted for timeless sophistication.
+            <p class="text-gray-500 mb-4">
+              Luxury contemporary silhouette crafted for modern elegance.
             </p>
 
-            <p class="mt-4 text-xl font-semibold">
+            <p class="text-2xl font-semibold">
               ₹4,999
             </p>
-
-            <button
-            onclick="event.preventDefault(); addToCart('Satin Evening Dress', '₹4,999')"
-            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
-              Add to Cart
-            </button>
 
           </div>
 
@@ -187,30 +193,29 @@
 
       <a href="product.html">
 
-        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
+        <div class="group bg-white rounded-[30px] overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
 
-          <img src="images/model2.jpg"
-          class="w-full h-[450px] object-cover">
+          <div class="overflow-hidden">
 
-          <div class="p-6">
+            <img
+            src="images/model5.jpg"
+            class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-700">
 
-            <h3 class="text-2xl font-semibold">
-              Silk Blazer
+          </div>
+
+          <div class="p-8">
+
+            <h3 class="text-3xl font-bold mb-3">
+              Modern Streetwear
             </h3>
 
-            <p class="text-gray-500 mt-3 leading-7">
-              Premium silhouettes inspired by luxury runway styling.
+            <p class="text-gray-500 mb-4">
+              Bold fashion aesthetics inspired by editorial street luxury.
             </p>
 
-            <p class="mt-4 text-xl font-semibold">
+            <p class="text-2xl font-semibold">
               ₹5,499
             </p>
-
-            <button
-            onclick="event.preventDefault(); addToCart('Silk Blazer', '₹5,499')"
-            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
-              Add to Cart
-            </button>
 
           </div>
 
@@ -222,205 +227,29 @@
 
       <a href="product.html">
 
-        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
+        <div class="group bg-white rounded-[30px] overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
 
-          <img src="images/model3.jpg"
-          class="w-full h-[450px] object-cover">
+          <div class="overflow-hidden">
 
-          <div class="p-6">
-
-            <h3 class="text-2xl font-semibold">
-              Summer Co-ord
-            </h3>
-
-            <p class="text-gray-500 mt-3 leading-7">
-              Contemporary styling designed for effortless elegance.
-            </p>
-
-            <p class="mt-4 text-xl font-semibold">
-              ₹3,999
-            </p>
-
-            <button
-            onclick="event.preventDefault(); addToCart('Summer Co-ord', '₹3,999')"
-            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
-              Add to Cart
-            </button>
+            <img
+            src="images/model7.jpg"
+            class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-700">
 
           </div>
 
-        </div>
+          <div class="p-8">
 
-      </a>
-
-      <!-- CARD 4 -->
-
-      <a href="product.html">
-
-        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
-
-          <img src="images/model4.jpg"
-          class="w-full h-[450px] object-cover">
-
-          <div class="p-6">
-
-            <h3 class="text-2xl font-semibold">
-              Evening Gown
+            <h3 class="text-3xl font-bold mb-3">
+              Urban Couture
             </h3>
 
-            <p class="text-gray-500 mt-3 leading-7">
-              Refined eveningwear infused with modern luxury aesthetics.
+            <p class="text-gray-500 mb-4">
+              Minimal luxury designed with elevated contemporary styling.
             </p>
 
-            <p class="mt-4 text-xl font-semibold">
-              ₹6,999
+            <p class="text-2xl font-semibold">
+              ₹6,299
             </p>
-
-            <button
-            onclick="event.preventDefault(); addToCart('Evening Gown', '₹6,999')"
-            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
-              Add to Cart
-            </button>
-
-          </div>
-
-        </div>
-
-      </a>
-
-      <!-- CARD 5 -->
-
-      <a href="product.html">
-
-        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
-
-          <img src="images/model5.jpg"
-          class="w-full h-[450px] object-cover">
-
-          <div class="p-6">
-
-            <h3 class="text-2xl font-semibold">
-              Avant Eclipse Set
-            </h3>
-
-            <p class="text-gray-500 mt-3 leading-7">
-              Bold geometric silhouettes blended with avant-garde styling.
-            </p>
-
-            <p class="mt-4 text-xl font-semibold">
-              ₹8,999
-            </p>
-
-            <button
-            onclick="event.preventDefault(); addToCart('Avant Eclipse Set', '₹8,999')"
-            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
-              Add to Cart
-            </button>
-
-          </div>
-
-        </div>
-
-      </a>
-
-      <!-- CARD 6 -->
-
-      <a href="product.html">
-
-        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
-
-          <img src="images/model6.jpg"
-          class="w-full h-[450px] object-cover">
-
-          <div class="p-6">
-
-            <h3 class="text-2xl font-semibold">
-              Crimson Noir Blazer
-            </h3>
-
-            <p class="text-gray-500 mt-3 leading-7">
-              Tailored sophistication with deep crimson runway elegance.
-            </p>
-
-            <p class="mt-4 text-xl font-semibold">
-              ₹7,499
-            </p>
-
-            <button
-            onclick="event.preventDefault(); addToCart('Crimson Noir Blazer', '₹7,499')"
-            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
-              Add to Cart
-            </button>
-
-          </div>
-
-        </div>
-
-      </a>
-
-      <!-- CARD 7 -->
-
-      <a href="product.html">
-
-        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
-
-          <img src="images/model7.jpg"
-          class="w-full h-[450px] object-cover">
-
-          <div class="p-6">
-
-            <h3 class="text-2xl font-semibold">
-              Solar Street Puffer
-            </h3>
-
-            <p class="text-gray-500 mt-3 leading-7">
-              Street-inspired layering infused with bold urban energy.
-            </p>
-
-            <p class="mt-4 text-xl font-semibold">
-              ₹5,999
-            </p>
-
-            <button
-            onclick="event.preventDefault(); addToCart('Solar Street Puffer', '₹5,999')"
-            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
-              Add to Cart
-            </button>
-
-          </div>
-
-        </div>
-
-      </a>
-
-      <!-- CARD 8 -->
-
-      <a href="product.html">
-
-        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
-
-          <img src="images/model8.jpg"
-          class="w-full h-[450px] object-cover">
-
-          <div class="p-6">
-
-            <h3 class="text-2xl font-semibold">
-              Ruby Flow Ensemble
-            </h3>
-
-            <p class="text-gray-500 mt-3 leading-7">
-              Fluid silhouettes designed with contemporary runway confidence.
-            </p>
-
-            <p class="mt-4 text-xl font-semibold">
-              ₹9,499
-            </p>
-
-            <button
-            onclick="event.preventDefault(); addToCart('Ruby Flow Ensemble', '₹9,499')"
-            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
-              Add to Cart
-            </button>
 
           </div>
 
@@ -432,37 +261,49 @@
 
   </section>
 
-  <!-- EDITORIAL SECTION -->
+  <!-- ABOUT BRAND SECTION -->
 
-  <section class="fade-up px-8 md:px-16 py-24">
+  <section class="px-6 md:px-16 pb-24">
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
+      <!-- IMAGE -->
+
       <div>
 
-        <img src="images/model9.jpg"
-        class="rounded-3xl shadow-xl w-full">
+        <img
+        src="images/model9.jpg"
+        class="rounded-[40px] shadow-2xl w-full">
 
       </div>
+
+      <!-- CONTENT -->
 
       <div>
 
         <p class="uppercase tracking-[5px] text-gray-500 mb-4">
-          Editorial Campaign
+          About AVELINE
         </p>
 
-        <h2 class="text-5xl md:text-6xl font-bold mb-8">
-          Modern Luxury Redefined
+        <h2 class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+
+          Fashion Inspired By Confidence & Elegance
+
         </h2>
 
-        <p class="text-gray-600 leading-8 mb-10">
-          Discover bold silhouettes, artistic tailoring, and contemporary fashion inspired by global runway culture.
+        <p class="text-gray-600 text-lg leading-9 mb-8">
+
+          AVELINE is a modern luxury fashion house designed for women who embrace individuality, confidence, and timeless sophistication.
+
         </p>
 
-        <a href="collections.html">
+        <a href="about.html">
 
-          <button class="bg-black text-white px-8 py-4 rounded-full">
-            Explore Editorial
+          <button
+          class="bg-black text-white px-10 py-5 rounded-full text-lg hover:scale-105 transition">
+
+            Discover More
+
           </button>
 
         </a>
@@ -475,47 +316,65 @@
 
   <!-- FOOTER -->
 
-  <footer class="bg-black text-white py-16">
+  <footer class="bg-black text-white py-20">
 
-    <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+    <div class="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+
+      <!-- BRAND -->
 
       <div>
 
-        <h2 class="text-3xl font-bold mb-4">
+        <h2 class="text-4xl font-bold mb-6">
           AVELINE
         </h2>
 
-        <p class="text-gray-400 leading-7">
-          Luxury fashion crafted for modern women who embrace elegance and individuality.
+        <p class="text-gray-400 leading-8">
+
+          Luxury fashion crafted for modern women who embrace elegance, creativity, and individuality.
+
         </p>
 
       </div>
 
+      <!-- LINKS -->
+
       <div>
 
-        <h3 class="text-xl font-semibold mb-4">
+        <h3 class="text-2xl font-semibold mb-6">
           Quick Links
         </h3>
 
-        <ul class="space-y-3 text-gray-400">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="collections.html">Collections</a></li>
-          <li><a href="about.html">About</a></li>
+        <ul class="space-y-4 text-gray-400">
+
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <li>
+            <a href="collections.html">Collections</a>
+          </li>
+
+          <li>
+            <a href="about.html">About</a>
+          </li>
+
         </ul>
 
       </div>
 
+      <!-- CONTACT -->
+
       <div>
 
-        <h3 class="text-xl font-semibold mb-4">
+        <h3 class="text-2xl font-semibold mb-6">
           Contact
         </h3>
 
-        <p class="text-gray-400">
+        <p class="text-gray-400 mb-4">
           hello@aveline.com
         </p>
 
-        <p class="text-gray-400 mt-2">
+        <p class="text-gray-400">
           +91 98765 43210
         </p>
 
@@ -524,54 +383,6 @@
     </div>
 
   </footer>
-
-  <!-- SCRIPT -->
-
-  <script>
-
-    let cartCount = 0
-
-    function toggleCart(){
-
-      const cartPanel = document.getElementById('cart-panel')
-
-      cartPanel.classList.toggle('hidden')
-
-    }
-
-    function addToCart(productName, productPrice){
-
-      cartCount++
-
-      document.getElementById('cart-count').innerText = cartCount
-
-      const cartItems = document.getElementById('cart-items')
-
-      if(cartCount === 1){
-        cartItems.innerHTML = ''
-      }
-
-      cartItems.innerHTML += `
-
-        <div class="border-b pb-4">
-
-          <h3 class="text-xl font-semibold">
-            ${productName}
-          </h3>
-
-          <p class="text-gray-500 mt-2">
-            ${productPrice}
-          </p>
-
-        </div>
-
-      `
-
-    }
-
-  </script>
-
-  <script src="js/script.js"></script>
 
 </body>
 </html>
