@@ -20,36 +20,62 @@
 <body>
 
   <!-- NAVBAR -->
+<!-- NAVBAR -->
 
-  <nav class="flex justify-between items-center px-8 py-6 absolute w-full z-10 text-white backdrop-blur-sm">
+<nav class="absolute top-0 left-0 w-full z-50">
 
-    <h1 class="text-3xl font-bold">
-      AVELINE
-    </h1>
-
-    <ul class="flex gap-10 text-lg">
-      <li><a href="index.html" class="active-link">Home</a></li>
-      <li><a href="collections.html">Collections</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-
-    <!-- CART -->
-
-    <div class="relative">
-
-      <button onclick="toggleCart()" class="text-2xl relative">
-        🛍️
-
-        <span
-        id="cart-count"
-        class="absolute -top-2 -right-3 bg-white text-black text-xs w-5 h-5 rounded-full flex items-center justify-center font-semibold">
-          0
-        </span>
-
-      </button>
-
+    <div class="flex justify-between items-center px-5 md:px-10 py-6">
+  
+      <!-- LOGO -->
+  
+      <h1 class="text-3xl md:text-5xl font-bold text-white">
+        AVELINE
+      </h1>
+  
+      <!-- RIGHT SIDE -->
+  
+      <div class="flex items-center gap-6 md:gap-10">
+  
+        <!-- MENU -->
+  
+        <ul class="flex gap-4 md:gap-8 text-white text-base md:text-2xl">
+  
+          <li>
+            <a href="index.html" class="hover:text-gray-300 transition">
+              Home
+            </a>
+          </li>
+  
+          <li>
+            <a href="collections.html" class="hover:text-gray-300 transition">
+              Collections
+            </a>
+          </li>
+  
+          <li>
+            <a href="about.html" class="hover:text-gray-300 transition">
+              About
+            </a>
+          </li>
+  
+        </ul>
+  
+        <!-- CART -->
+  
+        <a href="product.html">
+  
+          <div class="relative text-2xl text-white">
+  
+            🛍️
+  
+          </div>
+  
+        </a>
+  
+      </div>
+  
     </div>
-
+  
   </nav>
 
   <!-- CART PANEL -->
