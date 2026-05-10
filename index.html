@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aveline Fashion</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="flex justify-between items-center px-8 py-6 absolute w-full z-10 text-white backdrop-blur-sm">
+
+    <h1 class="text-3xl font-bold">
+      AVELINE
+    </h1>
+
+    <ul class="flex gap-10 text-lg">
+      <li><a href="index.html" class="active-link">Home</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+
+    <!-- CART -->
+
+    <div class="relative">
+
+      <button onclick="toggleCart()" class="text-2xl relative">
+        🛍️
+
+        <span
+        id="cart-count"
+        class="absolute -top-2 -right-3 bg-white text-black text-xs w-5 h-5 rounded-full flex items-center justify-center font-semibold">
+          0
+        </span>
+
+      </button>
+
+    </div>
+
+  </nav>
+
+  <!-- CART PANEL -->
+
+  <div
+  id="cart-panel"
+  class="hidden fixed top-0 right-0 w-[350px] h-full bg-white shadow-2xl z-50 p-8 overflow-y-auto">
+
+    <div class="flex justify-between items-center mb-8">
+
+      <h2 class="text-3xl font-bold text-black">
+        Your Cart
+      </h2>
+
+      <button onclick="toggleCart()" class="text-3xl text-black">
+        ×
+      </button>
+
+    </div>
+
+    <div id="cart-items" class="space-y-6 text-black">
+
+      <p class="text-gray-500">
+        Cart is empty
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- HERO SECTION -->
+
+  <section
+  class="h-screen flex items-center justify-center text-center bg-cover bg-center"
+  style="background-image: url('images/heroo.jpg');">
+
+    <div class="fade-up bg-black/50 p-10 md:p-16 rounded-3xl text-white max-w-4xl mx-6">
+
+      <h1 class="text-4xl md:text-7xl leading-tight font-bold mb-6">
+        Redefine Modern Fashion
+      </h1>
+
+      <p class="text-xl mb-8">
+        Elegant collections crafted for contemporary women.
+      </p>
+
+      <a href="collections.html">
+
+        <button class="bg-white text-black px-8 py-4 rounded-full hover:scale-105 transition duration-300">
+          Shop Collection
+        </button>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- PRODUCTS -->
+
+  <section class="fade-up px-8 md:px-16 py-24 bg-[#f8f5f1]">
+
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+      New Arrivals
+    </h2>
+
+    <p class="text-gray-600 text-lg mb-12 max-w-2xl">
+      Explore elevated essentials designed for timeless elegance and contemporary sophistication.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- CARD 1 -->
+
+      <a href="product.html">
+
+        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
+
+          <img src="images/model1.jpg"
+          class="w-full h-[450px] object-cover">
+
+          <div class="p-6">
+
+            <h3 class="text-2xl font-semibold">
+              Satin Evening Dress
+            </h3>
+
+            <p class="text-gray-500 mt-3 leading-7">
+              Elegant satin tailoring crafted for timeless sophistication.
+            </p>
+
+            <p class="mt-4 text-xl font-semibold">
+              ₹4,999
+            </p>
+
+            <button
+            onclick="event.preventDefault(); addToCart('Satin Evening Dress', '₹4,999')"
+            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
+              Add to Cart
+            </button>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- CARD 2 -->
+
+      <a href="product.html">
+
+        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
+
+          <img src="images/model2.jpg"
+          class="w-full h-[450px] object-cover">
+
+          <div class="p-6">
+
+            <h3 class="text-2xl font-semibold">
+              Silk Blazer
+            </h3>
+
+            <p class="text-gray-500 mt-3 leading-7">
+              Premium silhouettes inspired by luxury runway styling.
+            </p>
+
+            <p class="mt-4 text-xl font-semibold">
+              ₹5,499
+            </p>
+
+            <button
+            onclick="event.preventDefault(); addToCart('Silk Blazer', '₹5,499')"
+            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
+              Add to Cart
+            </button>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- CARD 3 -->
+
+      <a href="product.html">
+
+        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
+
+          <img src="images/model3.jpg"
+          class="w-full h-[450px] object-cover">
+
+          <div class="p-6">
+
+            <h3 class="text-2xl font-semibold">
+              Summer Co-ord
+            </h3>
+
+            <p class="text-gray-500 mt-3 leading-7">
+              Contemporary styling designed for effortless elegance.
+            </p>
+
+            <p class="mt-4 text-xl font-semibold">
+              ₹3,999
+            </p>
+
+            <button
+            onclick="event.preventDefault(); addToCart('Summer Co-ord', '₹3,999')"
+            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
+              Add to Cart
+            </button>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- CARD 4 -->
+
+      <a href="product.html">
+
+        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
+
+          <img src="images/model4.jpg"
+          class="w-full h-[450px] object-cover">
+
+          <div class="p-6">
+
+            <h3 class="text-2xl font-semibold">
+              Evening Gown
+            </h3>
+
+            <p class="text-gray-500 mt-3 leading-7">
+              Refined eveningwear infused with modern luxury aesthetics.
+            </p>
+
+            <p class="mt-4 text-xl font-semibold">
+              ₹6,999
+            </p>
+
+            <button
+            onclick="event.preventDefault(); addToCart('Evening Gown', '₹6,999')"
+            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
+              Add to Cart
+            </button>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- CARD 5 -->
+
+      <a href="product.html">
+
+        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
+
+          <img src="images/model5.jpg"
+          class="w-full h-[450px] object-cover">
+
+          <div class="p-6">
+
+            <h3 class="text-2xl font-semibold">
+              Avant Eclipse Set
+            </h3>
+
+            <p class="text-gray-500 mt-3 leading-7">
+              Bold geometric silhouettes blended with avant-garde styling.
+            </p>
+
+            <p class="mt-4 text-xl font-semibold">
+              ₹8,999
+            </p>
+
+            <button
+            onclick="event.preventDefault(); addToCart('Avant Eclipse Set', '₹8,999')"
+            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
+              Add to Cart
+            </button>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- CARD 6 -->
+
+      <a href="product.html">
+
+        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
+
+          <img src="images/model6.jpg"
+          class="w-full h-[450px] object-cover">
+
+          <div class="p-6">
+
+            <h3 class="text-2xl font-semibold">
+              Crimson Noir Blazer
+            </h3>
+
+            <p class="text-gray-500 mt-3 leading-7">
+              Tailored sophistication with deep crimson runway elegance.
+            </p>
+
+            <p class="mt-4 text-xl font-semibold">
+              ₹7,499
+            </p>
+
+            <button
+            onclick="event.preventDefault(); addToCart('Crimson Noir Blazer', '₹7,499')"
+            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
+              Add to Cart
+            </button>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- CARD 7 -->
+
+      <a href="product.html">
+
+        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
+
+          <img src="images/model7.jpg"
+          class="w-full h-[450px] object-cover">
+
+          <div class="p-6">
+
+            <h3 class="text-2xl font-semibold">
+              Solar Street Puffer
+            </h3>
+
+            <p class="text-gray-500 mt-3 leading-7">
+              Street-inspired layering infused with bold urban energy.
+            </p>
+
+            <p class="mt-4 text-xl font-semibold">
+              ₹5,999
+            </p>
+
+            <button
+            onclick="event.preventDefault(); addToCart('Solar Street Puffer', '₹5,999')"
+            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
+              Add to Cart
+            </button>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- CARD 8 -->
+
+      <a href="product.html">
+
+        <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
+
+          <img src="images/model8.jpg"
+          class="w-full h-[450px] object-cover">
+
+          <div class="p-6">
+
+            <h3 class="text-2xl font-semibold">
+              Ruby Flow Ensemble
+            </h3>
+
+            <p class="text-gray-500 mt-3 leading-7">
+              Fluid silhouettes designed with contemporary runway confidence.
+            </p>
+
+            <p class="mt-4 text-xl font-semibold">
+              ₹9,499
+            </p>
+
+            <button
+            onclick="event.preventDefault(); addToCart('Ruby Flow Ensemble', '₹9,499')"
+            class="mt-6 bg-black text-white px-6 py-3 rounded-full w-full">
+              Add to Cart
+            </button>
+
+          </div>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- EDITORIAL SECTION -->
+
+  <section class="fade-up px-8 md:px-16 py-24">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <div>
+
+        <img src="images/model9.jpg"
+        class="rounded-3xl shadow-xl w-full">
+
+      </div>
+
+      <div>
+
+        <p class="uppercase tracking-[5px] text-gray-500 mb-4">
+          Editorial Campaign
+        </p>
+
+        <h2 class="text-5xl md:text-6xl font-bold mb-8">
+          Modern Luxury Redefined
+        </h2>
+
+        <p class="text-gray-600 leading-8 mb-10">
+          Discover bold silhouettes, artistic tailoring, and contemporary fashion inspired by global runway culture.
+        </p>
+
+        <a href="collections.html">
+
+          <button class="bg-black text-white px-8 py-4 rounded-full">
+            Explore Editorial
+          </button>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="bg-black text-white py-16">
+
+    <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <div>
+
+        <h2 class="text-3xl font-bold mb-4">
+          AVELINE
+        </h2>
+
+        <p class="text-gray-400 leading-7">
+          Luxury fashion crafted for modern women who embrace elegance and individuality.
+        </p>
+
+      </div>
+
+      <div>
+
+        <h3 class="text-xl font-semibold mb-4">
+          Quick Links
+        </h3>
+
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+
+      </div>
+
+      <div>
+
+        <h3 class="text-xl font-semibold mb-4">
+          Contact
+        </h3>
+
+        <p class="text-gray-400">
+          hello@aveline.com
+        </p>
+
+        <p class="text-gray-400 mt-2">
+          +91 98765 43210
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    let cartCount = 0
+
+    function toggleCart(){
+
+      const cartPanel = document.getElementById('cart-panel')
+
+      cartPanel.classList.toggle('hidden')
+
+    }
+
+    function addToCart(productName, productPrice){
+
+      cartCount++
+
+      document.getElementById('cart-count').innerText = cartCount
+
+      const cartItems = document.getElementById('cart-items')
+
+      if(cartCount === 1){
+        cartItems.innerHTML = ''
+      }
+
+      cartItems.innerHTML += `
+
+        <div class="border-b pb-4">
+
+          <h3 class="text-xl font-semibold">
+            ${productName}
+          </h3>
+
+          <p class="text-gray-500 mt-2">
+            ${productPrice}
+          </p>
+
+        </div>
+
+      `
+
+    }
+
+  </script>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Product Details | AVELINE</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="flex justify-between items-center px-8 py-6 bg-white shadow-sm sticky top-0 z-50">
+
+    <h1 class="text-3xl font-bold">
+      AVELINE
+    </h1>
+
+    <ul class="flex gap-10 text-lg">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+
+    <!-- CART -->
+
+    <div class="relative">
+
+      <button onclick="toggleCart()" class="text-2xl relative">
+        🛍️
+
+        <span
+        id="cart-count"
+        class="absolute -top-2 -right-3 bg-black text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-semibold">
+          0
+        </span>
+
+      </button>
+
+    </div>
+
+  </nav>
+
+  <!-- CART PANEL -->
+
+  <div
+  id="cart-panel"
+  class="hidden fixed top-0 right-0 w-[380px] h-screen bg-white shadow-2xl z-50 flex flex-col">
+
+    <!-- HEADER -->
+
+    <div class="flex justify-between items-center p-8 border-b">
+
+      <h2 class="text-3xl font-bold">
+        Your Cart
+      </h2>
+
+      <button onclick="toggleCart()" class="text-3xl">
+        ×
+      </button>
+
+    </div>
+
+    <!-- SCROLL AREA -->
+
+    <div class="flex-1 overflow-y-auto">
+
+      <!-- CART ITEMS -->
+
+      <div
+      id="cart-items"
+      class="p-8 space-y-6">
+
+        <p class="text-gray-500">
+          Cart is empty
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- CHECKOUT BUTTON -->
+
+    <div class="p-8 border-t bg-white">
+
+      <a href="checkout.html">
+
+        <button
+        class="w-full bg-black text-white py-4 rounded-xl text-lg hover:scale-[1.02] transition">
+
+          Proceed to Checkout
+
+        </button>
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- PRODUCT SECTION -->
+
+  <section class="fade-up px-8 md:px-16 py-20">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- PRODUCT IMAGE -->
+
+      <div>
+
+        <img
+        src="images/model6.jpg"
+        class="w-full rounded-3xl shadow-2xl">
+
+      </div>
+
+      <!-- PRODUCT CONTENT -->
+
+      <div>
+
+        <p class="uppercase tracking-[5px] text-gray-500 mb-4">
+          Luxury Collection
+        </p>
+
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+          Crimson Noir Blazer
+        </h1>
+
+        <p class="text-3xl font-semibold mb-8">
+          ₹7,499
+        </p>
+
+        <p class="text-gray-600 leading-8 mb-10">
+          Tailored sophistication inspired by luxury runway fashion. Crafted with premium textures and structured silhouettes for modern elegance.
+        </p>
+
+        <!-- SIZE -->
+
+        <div class="mb-10">
+
+          <h3 class="text-xl font-semibold mb-4">
+            Select Size
+          </h3>
+
+          <div class="flex gap-4">
+
+            <button
+            onclick="selectSize(this, 'S')"
+            class="size-btn border border-black px-5 py-3 rounded-full">
+              S
+            </button>
+
+            <button
+            onclick="selectSize(this, 'M')"
+            class="size-btn border border-black px-5 py-3 rounded-full bg-black text-white">
+              M
+            </button>
+
+            <button
+            onclick="selectSize(this, 'L')"
+            class="size-btn border border-black px-5 py-3 rounded-full">
+              L
+            </button>
+
+            <button
+            onclick="selectSize(this, 'XL')"
+            class="size-btn border border-black px-5 py-3 rounded-full">
+              XL
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- QUANTITY -->
+
+        <div class="mb-10">
+
+          <h3 class="text-xl font-semibold mb-4">
+            Quantity
+          </h3>
+
+          <div class="flex items-center gap-4">
+
+            <button
+            onclick="decreaseQuantity()"
+            class="bg-black text-white w-10 h-10 rounded-full">
+              -
+            </button>
+
+            <span id="quantity" class="text-2xl">
+              1
+            </span>
+
+            <button
+            onclick="increaseQuantity()"
+            class="bg-black text-white w-10 h-10 rounded-full">
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- ADD TO CART -->
+
+        <button
+        onclick="addToCart()"
+        class="bg-black text-white px-10 py-5 rounded-full hover:scale-105 transition duration-300">
+
+          Add to Cart
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="bg-black text-white py-16">
+
+    <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <div>
+
+        <h2 class="text-3xl font-bold mb-4">
+          AVELINE
+        </h2>
+
+        <p class="text-gray-400 leading-7">
+          Luxury fashion crafted for modern women who embrace elegance and individuality.
+        </p>
+
+      </div>
+
+      <div>
+
+        <h3 class="text-xl font-semibold mb-4">
+          Quick Links
+        </h3>
+
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+
+      </div>
+
+      <div>
+
+        <h3 class="text-xl font-semibold mb-4">
+          Contact
+        </h3>
+
+        <p class="text-gray-400">
+          hello@aveline.com
+        </p>
+
+        <p class="text-gray-400 mt-2">
+          +91 98765 43210
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    let quantity = 1
+    let selectedSize = "M"
+
+    // LOAD CART
+
+    let cart = JSON.parse(localStorage.getItem('avelineCart')) || []
+
+    updateCartUI()
+
+    // TOGGLE CART
+
+    function toggleCart(){
+
+      const cartPanel = document.getElementById('cart-panel')
+
+      cartPanel.classList.toggle('hidden')
+
+    }
+
+    // QUANTITY
+
+    function increaseQuantity(){
+
+      quantity++
+
+      document.getElementById('quantity').innerText = quantity
+
+    }
+
+    function decreaseQuantity(){
+
+      if(quantity > 1){
+
+        quantity--
+
+        document.getElementById('quantity').innerText = quantity
+
+      }
+
+    }
+
+    // SIZE SELECTOR
+
+    function selectSize(button, size){
+
+      selectedSize = size
+
+      const buttons = document.querySelectorAll('.size-btn')
+
+      buttons.forEach(btn => {
+
+        btn.classList.remove('bg-black')
+        btn.classList.remove('text-white')
+
+      })
+
+      button.classList.add('bg-black')
+      button.classList.add('text-white')
+
+    }
+
+    // ADD TO CART
+
+    function addToCart(){
+
+      const product = {
+
+        name: "Crimson Noir Blazer",
+        price: "₹7,499",
+        size: selectedSize,
+        quantity: quantity
+
+      }
+
+      cart.push(product)
+
+      // SAVE
+
+      localStorage.setItem('avelineCart', JSON.stringify(cart))
+
+      updateCartUI()
+
+      // OPEN CART
+
+      document.getElementById('cart-panel').classList.remove('hidden')
+
+    }
+
+    // UPDATE CART UI
+
+    function updateCartUI(){
+
+      const cartItems = document.getElementById('cart-items')
+
+      const cartCount = document.getElementById('cart-count')
+
+      cartItems.innerHTML = ''
+
+      if(cart.length === 0){
+
+        cartItems.innerHTML = `
+
+          <p class="text-gray-500">
+            Cart is empty
+          </p>
+
+        `
+
+        cartCount.innerText = 0
+
+        return
+
+      }
+
+      let totalItems = 0
+
+      cart.forEach(item => {
+
+        totalItems += item.quantity
+
+        const div = document.createElement('div')
+
+        div.className = 'border-b pb-4'
+
+        div.innerHTML = `
+
+          <h3 class="text-xl font-semibold">
+            ${item.name}
+          </h3>
+
+          <p class="text-gray-500 mt-1">
+            ${item.price}
+          </p>
+
+          <p class="text-sm text-gray-400 mt-1">
+            Size: ${item.size}
+          </p>
+
+          <p class="text-sm text-gray-400 mt-1">
+            Quantity: ${item.quantity}
+          </p>
+
+        `
+
+        cartItems.appendChild(div)
+
+      })
+
+      cartCount.innerText = totalItems
+
+    }
+
+  </script>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
